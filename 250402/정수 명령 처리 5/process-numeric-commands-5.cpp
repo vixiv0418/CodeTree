@@ -18,7 +18,7 @@ int main() {
             if (command[i] =="push_back") {
                 v.push_back(num[i]);
             }
-            else if (command[i] == "get") {
+            else if (command[i] == "get") { // index니까 -1
                 cout<<v[num[i]-1]<<endl;
             }
         }
