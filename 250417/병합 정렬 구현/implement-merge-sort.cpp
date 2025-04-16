@@ -1,9 +1,10 @@
 #include <iostream>
-#include <vector>
+#define MAX_N 100000
 using namespace std;
 
-vector<int> arr;
-vector<int> merged_arr;
+int n;
+int arr[MAX_N];
+int merged_arr[MAX_N];
 
 void merge(int low, int mid, int high) {
     int i = low;
@@ -11,24 +12,17 @@ void merge(int low, int mid, int high) {
     int k = low;
 
     while (i <= mid && j <= high) {
-        if (arr[i] <= arr[j]) {
-            merged_arr[k] = arr[i];
-            k++; i++;
-        } else {
-            merged_arr[k] = arr[j];
-            k++; j++;
-        }
+        if (arr[i] <= arr[j]) 
+            merged_arr[k++] = arr[i++];
+        else 
+            merged_arr[k++] = arr[j++];
     }
 
-    while (i <= mid) {
-        merged_arr[k] = arr[i];
-        k++; i++;
-    }
+    while (i <= mid)
+        merged_arr[k++] = arr[i++];
 
-    while (j <= high) {
-        merged_arr[k] = arr[j];
-        k++; j++;
-    }
+    while (j <= high)
+        merged_arr[k++] = arr[j++];
 
     for (int idx = low; idx <= high; idx++) {
         arr[idx] = merged_arr[idx];
@@ -45,11 +39,7 @@ void merge_sort(int low, int high) {
 }
 
 int main() {
-    int n;
     cin >> n;
-
-    arr.resize(n);
-    merged_arr.resize(n);
 
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
