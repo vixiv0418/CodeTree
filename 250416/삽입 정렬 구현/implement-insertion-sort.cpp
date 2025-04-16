@@ -10,10 +10,10 @@ void InsertionSort() {
         int key = arr[i]; // 원래 key값을 기억
         int j =i-1;
         while(j>=0 && arr[j]>key) {
-            arr[j+1] =arr[j];
+            arr[j+1] =arr[j]; // 큰 값을 한칸 뒤에 넣어줌
             j--;
         }
-        arr[j+1]=key; // key값을 올바른 위치에 삽입
+        arr[j+1]=key; // key값을 올바른 위치에 삽입 (즉, swap)
         }
 }
 
