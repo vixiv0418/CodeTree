@@ -6,11 +6,10 @@ using namespace std;
 int n;
 int arr[MAX_N];
 
-
 void heapify(int n, int i) {
     int largest = i;         // 루트를 가장 큰 값으로 가정
-    int l = 2 * i + 1;       // 왼쪽 자식
-    int r = 2 * i + 2;       // 오른쪽 자식
+    int l = i * 2;        // 왼쪽 자식
+    int r = i * 2 + 1;       // 오른쪽 자식
 
     // 왼쪽 자식이 더 크면
     if (l < n && arr[l] > arr[largest])
