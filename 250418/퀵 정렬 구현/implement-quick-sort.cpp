@@ -18,7 +18,7 @@ int partition(int low, int high) {
     }
 
     swap(arr[i + 1], arr[high]);  // 피벗을 중간으로 이동
-    
+
     return i + 1;
 }
 
@@ -40,7 +40,7 @@ int main() {
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    quickSort(arr, 0, n - 1);
+    quickSort(0, n - 1);
 
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
