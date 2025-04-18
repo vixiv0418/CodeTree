@@ -6,7 +6,7 @@ using namespace std;
 int n;
 int arr[MAX_N];
 
-// heapify 함수 (최대 힙 기준)
+
 void heapify(int n, int i) {
     int largest = i;         // 루트를 가장 큰 값으로 가정
     int l = 2 * i + 1;       // 왼쪽 자식
@@ -28,32 +28,30 @@ void heapify(int n, int i) {
 }
 
 // 힙 정렬
-void heapSort() {
-    // 1. 배열을 최대 힙으로 만듦 (build heap)
-    for (int i = n / 2 - 1; i >= 0; i--)
+void heapsort() {
+    // 1. 배열을 max-heap으로 만듦 
+    for (int i = n / 2; i >= 1; i--)
         heapify(n, i);
 
     // 2. 루트(가장 큰 값)를 맨 뒤로 보내고 heapify 반복
-    for (int i = n - 1; i > 0; i--) {
-        swap(arr[0], arr[i]);     // 최대값을 맨 뒤로 보냄
-        heapify(i, 0);            // 남은 부분 다시 heapify
+    for (int i = n; i > 1; i--) {
+        swap(arr[1], arr[i]);     // 최대값을 맨 뒤로 보냄
+        heapify(i-1, 1);            // 남은 부분 다시 heapify
     }
 }
 
 int main() {
-    // 입력
+    
     cin >> n;
+
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    // 힙 정렬 수행
-    heapSort();
-
-    // 출력
+    heapsort();
+    
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
-    cout << endl;
-
+    
     return 0;
 }
 
