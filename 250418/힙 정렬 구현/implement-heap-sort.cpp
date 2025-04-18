@@ -4,7 +4,7 @@ using namespace std;
 #define MAX_N 100000
 
 int n;
-int arr[MAX_N];
+int arr[MAX_N+1];
 
 void heapify(int n, int i) {
     int largest = i;         // 루트를 가장 큰 값으로 가정
@@ -12,11 +12,11 @@ void heapify(int n, int i) {
     int r = i * 2 + 1;       // 오른쪽 자식
 
     // 왼쪽 자식이 더 크면
-    if (l < n && arr[l] > arr[largest])
+    if (l <= n && arr[l] > arr[largest])
         largest = l;
 
     // 오른쪽 자식이 더 크면
-    if (r < n && arr[r] > arr[largest])
+    if (r <= n && arr[r] > arr[largest])
         largest = r;
 
     // 가장 큰 값이 루트가 아니면 교환 후 재귀 호출
