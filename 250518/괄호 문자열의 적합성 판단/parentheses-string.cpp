@@ -12,9 +12,13 @@ int main() {
     for (int i =0; i<str.size(); i++) {
         if (str[i]=='(')
             s.push(str[i]);
-        else
-            if (s.empty()==0)
-                s.pop();
+        else {
+            if (s.empty()==1) {
+                cout << "No";
+                return 0;
+            }
+            s.pop();
+        }
     }
     if(s.empty()==1)
         cout << "Yes";
