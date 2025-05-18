@@ -13,7 +13,8 @@ int main() {
         if (str[i]=='(')
             s.push(str[i]);
         else
-            s.pop();
+            if (s.empty()==0)
+                s.pop();
     }
     if(s.empty()==1)
         cout << "Yes";
