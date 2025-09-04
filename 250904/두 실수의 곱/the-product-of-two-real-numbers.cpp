@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-    int a = 5.26;
-    int b = 8.27;
+    float a = 5.26;
+    float b = 8.27;
 
     cout<< fixed;
     cout.precision(3);
