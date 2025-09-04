@@ -6,8 +6,8 @@ int main() {
     int b = 8.27;
 
     cout<< fixed;
-    cout<<precision(3);
+    cout.precision(3);
 
-    cout<<a<<endl<<b;
+    cout<<a* b;
     return 0;
 }
