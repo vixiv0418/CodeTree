@@ -13,12 +13,12 @@ int main() {
         cin >> nums[i];
     }
 
-    sort(nums,nums+5);
+    sort(nums,nums+n);
     for (int i =0; i<n; i++) {
         cout<< nums[i]<<" ";
     }
     cout<<endl;
-    sort(nums,nums+5,greater<int>());
+    sort(nums,nums+n,greater<int>());
     for (int j=0; j<n; j++) {
         cout<< nums[j]<<" ";
     }
