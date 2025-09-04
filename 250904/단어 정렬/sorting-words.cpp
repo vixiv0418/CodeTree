@@ -16,12 +16,7 @@ int main() {
 
     sort(word,word+n);
     for (int i = 0; i<n; i++) {
-        cout<< word[i]<<" ";
-    }
-    cout<< endl;
-    sort(word,word+n,greater<string>());
-    for (int j =0; j<n; j++) {
-        cout<<word[i]<<" ";
+        cout<< word[i]<<endl;
     }
     return 0;
 }
