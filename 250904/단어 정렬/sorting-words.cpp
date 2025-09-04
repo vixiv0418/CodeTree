@@ -19,7 +19,7 @@ int main() {
         cout<< word[i]<<" ";
     }
     cout<< endl;
-    sort(word,word+n,greater<string>()) 
+    sort(word,word+n,greater<string>());
     for (int j =0; j<n; j++) {
         cout<<word[i]<<" ";
     }
